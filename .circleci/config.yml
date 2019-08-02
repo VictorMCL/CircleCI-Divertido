@@ -37,7 +37,7 @@ jobs:
           name: docker push image
           command: | 
             docker push victormcl/appcircle:$CIRCLE_SHA1
-       - run:
+      - run:
           name: docker rm image
           command: |            
             docker rmi victormcl/appcircle:$CIRCLE_SHA1
