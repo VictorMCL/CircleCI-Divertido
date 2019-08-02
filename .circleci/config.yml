@@ -32,8 +32,7 @@ jobs:
           name: docker build image
           command: |      
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker build -t apptest:latest
-            docker tag apptest:latest victormcl/apptest:latest
+            docker build -t victormcl/apptest:latest .
       - run:
           name: docker push image
           command: | 
@@ -41,4 +40,4 @@ jobs:
       - run:
           name: docker rm image
           command: |            
-            docker rmi apptest:latest      
+            docker rmi victormcl/apptest:latest     
