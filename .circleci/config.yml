@@ -36,8 +36,8 @@ jobs:
       - run:
           name: docker push image
           command: | 
-            docker push victormcl/apptest:latest      
+            docker push victormcl/apptest:latest
       - run:
           name: docker rm image
           command: |            
-            docker rmi victormcl/apptest:latest     
+            docker rmi victormcl/apptest:latest
