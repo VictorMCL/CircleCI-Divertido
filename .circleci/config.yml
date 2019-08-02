@@ -32,12 +32,13 @@ jobs:
           name: docker build image
           command: |      
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker build -t victormcl/appcircle:$CIRCLE_SHA1
+            docker build -t apptest:latest
+            docker tag apptest:latest victormcl/apptest:latest
       - run:
           name: docker push image
           command: | 
-            docker push victormcl/appcircle:$CIRCLE_SHA1
+            docker push victormcl/apptest:latest      
       - run:
           name: docker rm image
           command: |            
-            docker rmi victormcl/appcircle:$CIRCLE_SHA1
+            docker rmi apptest:latest      
